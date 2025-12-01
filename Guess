@@ -1,0 +1,21 @@
+let a = Math.floor(Math.random() * 100) + 1;   // random number 1–100
+let inp;
+let score = 100;
+
+while (inp !== a) {
+  score = score - 1;
+
+  inp = Number.parseInt(prompt("Enter the number (1 to 100): "), 10);
+
+  if (inp === a) {
+    console.log("Congratulations! You guessed the correct number.");
+    console.log(`You guessed the actual number in ${100 - score} chances.`);
+    break;
+  } else if (inp > a && inp <= 100) {
+    console.log("Your number is greater than the actual number.");
+  } else if (inp < a && inp >= 1) {
+    console.log("Your number is smaller than the actual number.");
+  } else {
+    console.log("Enter a valid number between 1 and 100.");
+  }
+}
